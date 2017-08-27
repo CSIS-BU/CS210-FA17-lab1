@@ -75,3 +75,25 @@
    git remote add origin https://github.com/CSIS-BU/cs210-fa17-lab1-[YOUR ID].git
    
 1. More to come...
+
+## Other related notes
+
+1. From time to time, the instructor may update the instructions on the labs to clarify a few things. Once you have created your own repository from the link provided, you won't get those chnages automatically.
+
+1. To get the updates, you have to execute the following command (through Git bash and command prompt/terminal)
+   
+   * First, go to the corresponding folder where you keep the repository.
+   
+   * Then, do the following command (assume that your current branch is "master" and the original repository is located at "CSIS-BU/cs210-fa17-lab1.git")
+   
+   git branch master 
+
+   git pull https://github.com/CSIS-BU/cs210-fa17-lab1.git master
+   
+   git push origin master
+
+1. After these steps, both your local and remote repositories will get the latest update.
+
+* Note: You may be asked to fix some conflicts (if you changed some files), which you should not have to worry in this lab.
+
+* Reference: [Merging an upstream repository into your fork](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)
