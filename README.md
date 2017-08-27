@@ -36,7 +36,7 @@
 
     git push -u origin master
 
-1. Once you are done, login to your GitHub page and see if your repository does include the README.md file.
+1. Once you are done, login to your GitHub page and see if your repository does include the Lab1.txt file.
 
     If not, please try again or contact the instructor for help.
 
