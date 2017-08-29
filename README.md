@@ -1,97 +1,63 @@
-# CS 210, Lab 1
+# CS 210, Lab 1 -- When the remote repository is not originally empty (already has files/directory)
 
 1. Install Git on your machine [Git](https://git-scm.com/)
 
 1. Follow the provided link to create your own repository on GitHub
 
-    1.1 If you do not have a GitHub account, create one with your Bradley University e-mail address
+    * If you do not have a GitHub account, create one with your Bradley University e-mail address
 
 1. First check the repository. If the repository is empty (has no existing files in it), then follow the instruction in [README-EmptyProject](README-EmptyProject.md); otherwise, continue the following instructions.
 
 1. Since in this lab, you see the files README.md, README-EmptyProject.md, and .gitignore, you should continue with the following instructions.
 
-    Enter the following commands under command prompt.
+    * Open a command prompt: since you have installed Git, you can run "Git CMD" (Windows' App) instead
 
-    git clone git@github.com:CSIS-BU/cs210-fa17-lab1-[YOUR ID].git
+    * If you are in Windows, your default directory would be C:\Users\[your login id]
 
-    Note: Here, you are set up to use SSH to connect to the repository. Thus, you'll have to follow the instructions provided in this URL [Help, I keep getting a 'Permission Denied (publickey)' error when I push!](https://gist.github.com/adamjohnson/5682757) and set up the SSH key for the access.
+    * Now, change directory to Desktop by the following command.
 
-    Note: Another way to do it is through HTTPS. That is, instead of adding the remote repository info through the command above, you can execute the following command:
+    **cd Desktop**
 
-    git clone https://github.com/CSIS-BU/cs210-fa17-lab1-[YOUR ID].git
+    * Enter the following command to get a copy of the remote repository on GitHub to your Desktop
 
-    Be careful about the step above. The [YOUR ID] part should match what you get under GitHub
+    **git clone git@github.com:CSIS-BU/cs210-fa17-lab1-[YOUR ID].git**
 
-1. Once you are done, there should be a new sub-directory created under the current directory called "cs210-fa17-lab1-[YOUR ID]"
+    * Note: Here, you are set up to use SSH to connect to the repository. Thus, you'll have to follow the instructions provided in this URL [Help, I keep getting a 'Permission Denied (publickey)' error when I push!](https://gist.github.com/adamjohnson/5682757) and set up the SSH key for the access.
 
-    Now execute the following command.
+    * Note: Another way to do it is through HTTPS. That is, instead of adding the remote repository info through the command above, you can execute the following command:
 
-    cd cs210-fa17-lab1-[YOUR ID]
+    **git clone https://github.com/CSIS-BU/cs210-fa17-lab1-[YOUR ID].git**
 
-    echo "# CS 210, FA 17, Lab 1, [Your Name], [Your E-mail Address]" >> Lab1.txt
+    * Be careful about the step above. The [YOUR ID] part should match what you get under GitHub
 
-    git add Lab1.txt
+    * Note: I'd like you to learn how to do both SSH and HTTPS. Due to time limitation, I'll let you work on the SSH part. If you still have difficulty working with SSH, you can use the HTTPS option instead.
 
-    git commit -m "CS 210 Lab 1"
+1. Once you are done, there should be a **new sub-directory** created on your **Desktop** called "cs210-fa17-lab1-[YOUR ID]"
 
-    git push -u origin master
+    * Now execute the following command.
 
-1. Once you are done, login to your GitHub page and see if your repository does include the Lab1.txt file.
+    **cd cs210-fa17-lab1-[YOUR ID]**
 
-    If not, please try again or contact the instructor for help.
+    **echo "# CS 210, FA 17, Lab 1, [Your Name], [Your E-mail Address]" >> Lab1.txt**
 
-## Some Error Messages that you may encounter while doing the lab
+    **git add Lab1.txt**
 
-1. If you encounter the following error message
+    **git commit -m "CS 210 Lab 1"**
 
-    error: src refspec master does not match any.
+1. The first time you commit with your changes, you'll be asked to set up your name and e-mail for the remote repository.
 
-    error: failed to push some refs to 'git@github.com:CSIS-BU/cs210-fa17-lab1-[Your ID].git'
+    * Read the instructions and you know you'll have to execute the following commands.
 
-    This means that you did not "commit" the changes.
+    **git config --global user.name "[Your User Name]"**
 
-    So after running the following command, the error should be gone.
+    **git config --global user.email "[Your e-mail address]"**
 
-    git commit -m "CS 210 Lab 1"
+    * This only has to be executed once, which will be stored in the global setting.
 
-1. When you try to execute the "git push XXX" command, again, there may be another error message as follows.
+1. Now upload the changes you made to the GitHub repository.
 
-    Permission denied (publickey).
+    **git push -u origin master**
 
-    fatal: Could not read from remote repository.
+1. Now login to your GitHub page and see if your repository does include the **Lab1.txt** file.
 
-    This is because the initial instruction provided
-
-    git remote add origin git@github.com:CSIS-BU/cs210-fa17-lab1-[YOUR ID].git
-
-    requires you to set up your SSH key.
-
-    The instruction to do that is provided in this link [Help, I keep getting a 'Permission Denied (publickey)' error when I push](https://gist.github.com/adamjohnson/5682757)
-
-    Otherwise, you may execute the following command instead, and you will be prompted to enter your ID/Password on GitHub.
-
-    git remote add origin https://github.com/CSIS-BU/cs210-fa17-lab1-[YOUR ID].git
-
-1. More to come...
-
-## Other related notes
-
-1. From time to time, the instructor may update the instructions on the labs to clarify a few things. Once you have created your own repository from the link provided, you won't get those chnages automatically.
-
-1. To get the updates, you have to execute the following command (through Git bash and command prompt/terminal)
-
-    * First, go to the corresponding folder where you keep the repository.
-
-    * Then, do the following command (assume that your current branch is "master" and the original repository is located at "CSIS-BU/cs210-fa17-lab1.git")
-
-    git branch master
-
-    git pull https://github.com/CSIS-BU/cs210-fa17-lab1.git master
-
-    git push origin master
-
-1. After these steps, both your local and remote repositories will get the latest update.
-
-* Note: You may be asked to fix some conflicts (if you changed some files), which you should not have to worry in this lab.
-
-* Reference: [Merging an upstream repository into your fork](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)
+    * If so, you're now done with Lab 1. If not, please try again or contact the instructor for help.
